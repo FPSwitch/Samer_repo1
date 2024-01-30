@@ -46,7 +46,7 @@ def countfiles(dictfiles, lsttokens, repo):
                 shaDetails, ct = github_auth(shaUrl, lsttokens, ct)
                 filesjson = shaDetails['files']
                 for filenameObj in filesjson:
-                    filename = filenameObj['filename']
+                    filename = filenameObj['commit']   #collect authors who worked on it
                     dictfiles[filename] = dictfiles.get(filename, 0) + 1
                     print(filename)
             ipage += 1
